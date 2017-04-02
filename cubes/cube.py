@@ -9,16 +9,6 @@ class Cube:
 
     """
     def __init__(self):
-        self.vertices = (
-            (1, -1, -1),
-            (1, 1, -1),
-            (-1, 1, -1),
-            (-1, -1, -1),
-            (1, -1, 1),
-            (1, 1, 1),
-            (-1, -1, 1),
-            (-1, 1, 1)
-        )
         self.edges = (
             (0, 1),
             (0, 3),
@@ -58,3 +48,6 @@ class Cube:
                 glVertex3fv(self.vertices[vertex])
         glEnd()
 
+    def rotate_cube(self):
+        self.roto = glRotatef(self.rotation[0], self.rotation[1], self.rotation[2], self.rotation[3])
+        return self.roto
