@@ -23,14 +23,18 @@ class Cube:
             (5, 4),
             (5, 7)
         )
-
+        self.surfaces = (
+            (0, 1, 2, 3),
+            (3, 2, 7, 6),
+            (6, 7, 5, 4),
+            (4, 5, 1, 0),
+            (1, 5, 7, 2),
+            (4, 0, 3, 6)
+        )
+        self.rotation = (1, 3, 1, 1)
     def draw_cube(self):
         """
-        glBegin(GL_QUADS) then iterate over each surface and
-        for each vertex in that surface tuple color the space
 
-        glBegin(GL_LINES) iterates over the edges and vertices in those
-        edges and maps the edges and lines based on those vertices
         """
         glBegin(GL_QUADS)
         for surface in self.surfaces:
