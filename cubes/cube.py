@@ -1,7 +1,4 @@
-import pygame
-from pygame.locals import *
 from OpenGL.GL import *
-from OpenGL.GLU import *
 
 
 class Cube:
@@ -31,7 +28,8 @@ class Cube:
             (1, 5, 7, 2),
             (4, 0, 3, 6)
         )
-        self.rotation = (1, 3, 1, 1)
+
+
     def draw_cube(self):
         """
 
@@ -52,6 +50,3 @@ class Cube:
                 glVertex3fv(self.vertices[vertex])
         glEnd()
 
-    def rotate_cube(self):
-        self.roto = glRotatef(self.rotation[0], self.rotation[1], self.rotation[2], self.rotation[3])
-        return self.roto

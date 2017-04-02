@@ -5,6 +5,7 @@ from OpenGL.GLU import *
 from cubes.green_cube import Green_cube
 from cubes.red_cube import Red_cube
 from cubes.blue_cube import Blue_cube
+from cubes.little_black_cube import Black_cube
 
 
 class Trippy(object):
@@ -19,7 +20,7 @@ class Trippy(object):
         self.red_cube = Red_cube()
         self.green_cube = Green_cube()
         self.blue_cube = Blue_cube()
-        self.cubes = (self.red_cube, self.green_cube, self.blue_cube)
+        self.black_cube = Black_cube()
         self.looper()
 
     def looper(self):
@@ -28,13 +29,12 @@ class Trippy(object):
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     quit()
+            glRotatef(1, 3, 1, 1)
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
             self.blue_cube.draw_cube()
-            self.blue_cube.rotate_cube()
             self.green_cube.draw_cube()
-            self.green_cube.rotate_cube()
             self.red_cube.draw_cube()
-            self.red_cube.rotate_cube()
+            self.black_cube.draw_cube()
             pygame.display.flip()
             pygame.time.wait(10)
 

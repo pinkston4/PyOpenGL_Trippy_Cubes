@@ -1,7 +1,3 @@
-import pygame
-from pygame.locals import *
-from OpenGL.GL import *
-from OpenGL.GLU import *
 from .cube import Cube
 
 
@@ -23,15 +19,15 @@ class Red_cube(Cube):
         )
         self.colors = (
             (0, 0, 0),
-            (0.75, 0, 0),
+            (1, 0, 0),
             (0, 0, 0),
-            (0.75, 0, 0),
-            (0.75, 0, 0),
-            (0.75, 0, 0),
+            (1, 0, 0),
+            (1, 0, 0),
+            (1, 0, 0),
             (0, 0, 0),
-            (0.75, 0, 0),
+            (1, 0, 0),
             (0, 0, 0),
             (0, 0, 0),
-            (0.75, 0, 0),
-            (0.75, 0, 0),
+            (1, 0, 0),
+            (1, 0, 0),
         )
