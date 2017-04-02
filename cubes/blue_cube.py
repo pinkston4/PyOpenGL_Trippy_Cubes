@@ -2,7 +2,7 @@ from .cube import Cube
 
 class Blue_cube(Cube):
     """
-
+    the blue cube size and color
     """
     def __init__(self):
         Cube.__init__(self)

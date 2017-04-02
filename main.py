@@ -10,9 +10,18 @@ from cubes.little_black_cube import Black_cube
 
 class Trippy(object):
     """
-
+    The Trippy class is the main class of the application
+    methods:
+        __init__
+        looper
     """
     def __init__(self, screen_width, screen_height):
+        """
+        Initializes application, sets the screen size, initializes cubes,
+        sets the perspective, and calls the loop
+        :param screen_width: width of screen
+        :param screen_height: height of screen
+        """
         self.display = (screen_width, screen_height)
         self.screen = pygame.display.set_mode(self.display, DOUBLEBUF | OPENGL)
         self.percpective = gluPerspective(45, (self.display[0]/self.display[1]), 0.1, 50.0)
@@ -24,6 +33,11 @@ class Trippy(object):
         self.looper()
 
     def looper(self):
+        """
+        the while loop that makes the app run, listens for the quit event
+        rotates and re-draws cubes
+        :return:
+        """
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

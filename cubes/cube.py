@@ -3,9 +3,13 @@ from OpenGL.GL import *
 
 class Cube:
     """
-
+    The base Cube class that all other specific cube classes inherit from
+    methods:
+        __init__
+        draw_cube
     """
     def __init__(self):
+        # self.edges is a tuple of tuples containing indexes of vertices
         self.edges = (
             (0, 1),
             (0, 3),
@@ -20,6 +24,7 @@ class Cube:
             (5, 4),
             (5, 7)
         )
+        # the six surfaces of a cube, used for coloring them
         self.surfaces = (
             (0, 1, 2, 3),
             (3, 2, 7, 6),
@@ -32,7 +37,7 @@ class Cube:
 
     def draw_cube(self):
         """
-
+        draws and colors the cubes
         """
         glBegin(GL_QUADS)
         for surface in self.surfaces:
